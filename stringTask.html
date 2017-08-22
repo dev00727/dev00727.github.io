@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript</h2>
+ <h3> String task 1</h3>
+ 
+<script>
+
+function caseUp(){
+var sname= "He said \“My name is Elliott\” ";
+var n= sname.toUpperCase();
+console.log(n);
+}
+</script>
+
+<button type= "button" onclick ="caseUp()"> Upper case it! </button>
+
+  <h3> String task 2</h3>
+<script> 
+function join(){
+  var str= "Number";
+  var num= 1;
+  console.log(str.concat(num));
+  }
+  </script>
+ <button type= "button" onclick ="join()"> Join it! </button>
+ <h3> Arrays 1 / Strings 3</h3>
+ <p> Random list: </p>
+ <p id="show"></p>
+<script>
+var myarr= ["Apple"," Banana"," Metal"];
+document.getElementById("show").innerHTML= myarr;
+function add(){
+myarr[myarr.length] = " Cheese";
+document.getElementById("show").innerHTML= myarr;
+}
+function remove(){
+myarr.pop();
+document.getElementById("show").innerHTML= myarr;
+}
+</script>
+
+ <button type= "button" onclick ="add()"> Add to it! </button>
+ <button type= "button" onclick ="remove()"> Pop it! </button>
+ 
+<h3> Conditionals </h3>
+<script>
+var object2= {name:"Dummy",age:20 ,occupation:"Tester"};
+function check(){
+var age= object2.age;
+ if(age>=20 && age<=40){
+  console.log("true");
+ }
+ else{
+  console.log("false");
+ }
+}
+</script>
+ <button type= "button" onclick ="check()"> Check it! </button>
+ <h3> Iteration 1</h3>
+ <script>
+ function loop(){
+ for(var i=1; i<=10; i++){
+ console.log(i);
+ }
+ }
+ 
+ </script>
+ <button type= "button" onclick ="loop()"> Loop it! </button>
+ <h3>Iteration 2</h3>
+ 
+ <script>
+ function loop2(){
+ for(var i=1; i<=10; i++){
+  
+  if(i%2 === 0){
+  
+  console.log(i);
+  }
+ }
+ }
+ </script>
+  <button type= "button" onclick ="loop2()"> Loop/2 it! </button>
+ 
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
