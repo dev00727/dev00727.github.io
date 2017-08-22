@@ -149,7 +149,7 @@
               }
               document.getElementById("mypara").innerHTML += requestData[x];
               document.getElementById("mypara").innerHTML += "<br>";
-         
+
 
             }
           }
@@ -157,11 +157,12 @@
 
         function mem(members) {
           for (y in members) {
-           //add counter here in order to format later on 
-          
-            document.getElementById("mypara").innerHTML += "Name: "+members[y].name + " Age:" + members[y].age + " \tSecret Identity:" + members[y].secretIdentity +" \tPowers:" + members[y].powers+ " " ;
-            
-        
+            //add counter here in order to format later on 
+
+            document.getElementById("mypara").innerHTML += "Name: " + members[y].name + " Age:" + members[y].age +
+              " \tSecret Identity:" + members[y].secretIdentity + " \tPowers:" + members[y].powers + " ";
+
+
             document.getElementById("mypara").innerHTML += "<br>";
           }
         }
@@ -170,11 +171,23 @@
 
       <h3> JSON 2</h3>
       <script>
-      
+        function search() {
+          var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
+          var request = new XMLHttpRequest();
+          request.open('GET', requestURL);
+          request.responseType = 'json'
+          request.send();
+          request.onload = function () {
+            var requestData = request.response;
+            var myH1 = document.createElement('h1');
+
+            myH1.textContent = requestData['squadName'];
+            document.getElementById('mypara').appendChild(myH1);
+          }
       </script>
 
-      <button type="button" onClick="()"> it!</button>
-      
+      <button type="button" onClick="search()">Search it!</button>
+
 </body>
 
 </html>
