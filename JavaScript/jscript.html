@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript</h2>
+ 
+<script>
+
+function myFunction(x) {
+    return x * x;
+}
+//alert(myFunction(5));
+
+function myFunction2(x,y,z) {
+    return x+y+z;
+}
+
+//alert(myFunction2(5,1,1));
+var object1 = {name:"Skeletor",age:120,occupation:"evil"};
+function increaseAge(){
+
+  //alert("name "+ object1.name);
+  //alert("age "+object1.age);
+  //alert("occupation "+object1.occupation);
+  //object1.occupation= "retired";
+  //alert("new occupation "+object1.occupation);
+ // var age= object1.age;
+  //object1.age= age++;
+  object1.age++;
+  alert("New age: "+object1.age);
+  
+  
+  }
+function func(){
+alert("Hi user");
+}
+
+var object2= {name:"Default",age:0 ,occupation:"Default"};
+function create(){
+object2.name= document.getElementById("uname").value;
+object2.age= document.getElementById("uage").value;
+object2.occupation= document.getElementById("uocc").value;
+
+
+}
+function get(){
+window.alert("Name: "+object2.name+" Age: "+object2.age+" Occupation: "+object2.occupation);
+}
+function edit(){
+var name= document.getElementById("uname").value;
+var age= document.getElementById("uage").value;
+var occupation= document.getElementById("uocc").value;
+ if(!!name){
+ object2.name= name;
+ }
+ if(!!age){
+ object2.age= age;
+ }
+ if(!!occupation){
+ object2.occupation= occupation;
+ }
+ 
+ 
+
+}
+/*function maker(name,age,occupation)
+{
+var it = {};
+it.name = name;
+it.age = age;
+it.occupation = occupation;
+return it;
+}
+var myObject = make(document.getElementById("uname").value, document.getElementById("uage").value,document.getElementById("uocc").value);
+window.alert("Name: "+object.name+" Age: "+object.age+" Occupation: "+object.occupation);
+
+*/
+
+</script>
+<button type= "button" onclick ="func()"> Hi function </button>
+<p> increase age</p>
+<button type= "button" onclick ="increaseAge()"> High </button>
+
+<h3> Create your person</h3>
+<label> Enter person name: </label> <input type= text id="uname"><br>
+<label> Enter person age: </label> <input type= text id="uage"><br>
+<label> Enter person occupation: </label> <input type= text id="uocc"><br>
+<button type= "button" onclick ="create() "> Send </button>
+<button type= "button" onclick ="get()"> Get Person </button>
+<button type= "button" onclick ="edit()"> Edit Person </button>
+</body>
+</html> 
