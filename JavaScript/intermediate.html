@@ -71,11 +71,103 @@ function divide(num){
 </script>
 <button type= "button" onclick ="start()"> Divide it! </button>
 
+<h3>Strings 4</h3>
+
+<script>
+function triple(){
+  var str= " abcXXXabc";
+  var res = str.split("");
+  var mtc= res[0];
+  var count=0;
+  var final=0;
+
+  for (var i=1; i<=str.length; i++){
+    
+   if (mtc===res[i]){
+     
+     count++
+   
+     if (count>=2){
+       final++;
+     }
+   }
+   else {
+     count=0;
+     mtc= res[i];
+   }
+    
+  }
+  console.log(final);
+}
 
 
+</script>
+<button type= "button" onclick ="triple()"> Triple it! </button>
 
+<h3> DOM 1</h3>
 
+<script>
+function create(){
+  var para = document.createElement("P");            
+  para.id= 'mypara';        
+  var t = document.createTextNode("This is a paragraph.");
+  para.appendChild(t); 
+  document.body.appendChild(para);
+}
+function edit(){
+  var para= document.getElementById("para").value;
+  document.getElementById('mypara').innerHTML= para; 
+ 
+}
+function deleteP(){
+document.getElementById("mypara").innerHTML="";
+}
 
+</script>
+<button type= "button" onclick ="create()"> Create it! </button><br>
+<label> Enter words: </label> <input type= text id="para"><br>
+<button type= "button" onclick ="edit()"> Edit it! </button>
+<button type= "button" onclick ="deleteP()"> Delete it! </button>
+
+<h3> JSON 1</h3>
+
+var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+var request = new XMLHttpRequest();
+request.open(‘GET’, requestURL);
+request.responseType = ‘json’
+request.send();
+request.onload = function() {
+var requestData = request.response;
+var myH1 = document.createElement(‘h1’);
+ myH1.textContent = requestData[‘squadName’];
+document.getElementsBy
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
