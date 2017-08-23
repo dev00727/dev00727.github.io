@@ -170,8 +170,10 @@
       <button type="button" onclick="request()"> request it! </button>
 
       <h3> JSON 2</h3>
+
       <script>
         function search() {
+          var find = document.getElementById("label").value;
           var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
           var request = new XMLHttpRequest();
           request.open('GET', requestURL);
@@ -179,15 +181,98 @@
           request.send();
           request.onload = function () {
             var requestData = request.response;
-            var myH1 = document.createElement('h1');
+            //console.log(requestData);
 
-            myH1.textContent = requestData['squadName'];
-            document.getElementById('mypara').appendChild(myH1);
+            //console.log(requestData.length);
+
+
+            // for (let i = 0; i <= requestData.length; i++) {
+            // console.log(requestData[i]);
+            /*for (let j = 0; j <= 4; j++) {
+              //console.log(requestData[i]);
+              //console.log(requestData[i][j]);
+              console.log(requestData[i][j]);
+            }*/
+            //console.log(requestData[i].nm);
+            /*
+              if (requestData[i].nm === find) {
+
+                //for(var j=0; j<=4; j++){
+                requestData[i].toString();
+                document.getElementById("sp").innerHTML += requestData[i];
+
+
+              }
+
+
+
+            }*/
+
+            for (let i = 0; i <= requestData.length; i++) {
+
+              if (requestData[i].nm === find) {
+                //for(var j=0; j<=4; j++){
+                document.getElementById("sp").innerHTML += requestData[i].nm;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].cty;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].hse;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].yrs;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += "<br>";
+
+              }
+              if (requestData[i].cty === find) {
+                //for(var j=0; j<=4; j++){
+                document.getElementById("sp").innerHTML += requestData[i].nm;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].cty;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].hse;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].yrs;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += "<br>";
+
+              }
+              if (requestData[i].hse === find) {
+                //for(var j=0; j<=4; j++){
+                document.getElementById("sp").innerHTML += requestData[i].nm;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].cty;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].hse;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].yrs;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += "<br>";
+
+              }
+              if (requestData[i].yrs === find) {
+                //for(var j=0; j<=4; j++){
+                document.getElementById("sp").innerHTML += requestData[i].nm;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].cty;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].hse;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += requestData[i].yrs;
+                document.getElementById("sp").innerHTML += "<br>";
+                document.getElementById("sp").innerHTML += "<br>";
+
+              }
+             
+            }
+
           }
+        }
       </script>
-
+      <script>
+      </script>
+      <label> Enter search term: </label> <input type=t ext id="label"><br>
       <button type="button" onClick="search()">Search it!</button>
-
+      <p id="sp"> </p>
 </body>
 
 </html>
