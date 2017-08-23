@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Chess</title>
-    </head>
-    <body>
-        <script>
-            let moves=[[-1,-2],[1,-2],[-1,2],[1,2],[-2,-1],[2,-1],[-2,1],[2,1]];
-            let x = 0;
-            let y = 0;
-            let destX = 3;
-            let destY = 7;
 
-            while(x!==destX && y!==destY){
+<head>
+    <title>Chess</title>
+</head>
 
+<body>
+    <script>
+        let moves = [
+            [-1, -2],
+            [1, -2],
+            [-1, 2],
+            [1, 2],
+            [-2, -1],
+            [2, -1],
+            [-2, 1],
+            [2, 1]
+        ];
+        let x = 0;
+        let y = 0;
+        let destX = 3;
+        let destY = 7;
+        let starty=1;
+        let startx;
+        while (x !== destX && y !== destY) {
+            if (isOdd(destY)) {
+                let tempy = destY - 1;
+                let movesy = tempy / 2;
+                if (isOdd(movesy)) {
+                    startx = destx - 1;
+                }
+                else{
+                    startx=destx;
+                }
             }
+        }
 
+        function isOdd(y) {
+            return y % 2;
 
+        }
+    </script>
+</body>
 
-
-
-
-        </script>
-    </body>
 </html>
