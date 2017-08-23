@@ -2,15 +2,57 @@
 <html>
 
 <head>
-  <title>Intermediate</title>
+    <title>Garage</title>
 </head>
 
 <body>
-    
+    <h1>Garage</h1>
+
+    <script>
+        let garage = [];
+        let car = {
+            name: "",
+            regNum: "",
+            ownNum: ""
+        };
+
+        function checkIn() {
+            car.name = document.getElementById("name").value;
+            car.regNum = document.getElementById("rnum").value;
+            car.ownNum = document.getElementById("onum").value;
+            garage.push(car);
+        }
+
+        function checkOut() {
+            let r = document.getElementById("cnum").value;
+            
+        }
+
+        function show() {
+            document.getElementById("mypara").innerHTML = JSON.stringify(garage);
+        }
+    </script>
+    <h3>Garage content</h3><button type="button" onClick="show()">Show it!</button><br>
+    <input type=text id="content"><br>
+    <p id="mypara"> </p>
+    <h3> Check in </h3>
+    <label> Name: </label><input type=text id="name"><br>
+    <label> Registration Number: </label><input type=text id="rnum"><br>
+    <label> Owner number: </label><input type=text id="onum"><br>
+
+    <button type="button" onClick="checkIn()">Check in!</button><br>
+
+    <h3> Check out </h3>
+    <label> Registration Number: </label><input type=text id="cnum"><br>
 
 
+    <button type="button" onClick="checkOut()">Check out!</button><br>
 
+    <h3> Bill </h3>
+    <label> Car name: </label><input type=text id="carBill"><br>
+    <label> Car Registration number: </label><input type=text id="carreg"><br>
 
+    <button type="button" onClick="()">Calculate it!</button><br>
 
 
 
