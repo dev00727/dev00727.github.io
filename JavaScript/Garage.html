@@ -2,23 +2,27 @@
 <html>
 
 <head>
-        <script type="text/javascript" src="garage.js"></script>
+    <script type="text/javascript" src="garage.js"></script>
     <title>Garage</title>
 
 </head>
 
 <body>
-    <h1>Garage</h1> 
-    
-    <h3>Garage content</h3><button type="button" onClick="show()">Show it!</button><br>
+    <h1>Garage</h1>
+
+    <h3>Garage content</h3>
+    <button type="button" onClick="showGarage()">Show garage!</button>
+    <button type="button" onClick="showCar()">Show car(s)!</button><br>
     <br>
     <p id="mypara"> </p>
     <h3> Check in </h3>
-    <label> Name: </label><input type=text id="name"><br>
-    <label> Registration Number: </label><input type=text id="rnum"><br>
-    <label> Owner number: </label><input type=text id="onum"><br>
+    <label> Name: </label><input type=text id="name">
+    <label> Registration Number: </label><input type=text id="rnum">
+    <label> Seat number: </label><input type=text id="onum">
+    <label> Number of faults: </label><input type=text id="faults"><br>
 
-    <button type="button" onClick="checkIn()">Check in!</button><br>
+    <button type="button" onClick="toGarage()">Check in!</button>
+    <button type="button" onClick="toCar()">Create it!</button><br>
 
     <h3> Check out </h3>
     <label> Registration Number: </label><input type=text id="cnum"><br>
@@ -27,9 +31,9 @@
     <button type="button" onClick="checkOut()">Check out!</button><br>
 
     <h3> Bill </h3>
-    <label> Car name: </label><input type=text id="carBill"><br>
+    <p id="price"></p>
     <label> Car Registration number: </label><input type=text id="carreg"><br>
-
+   
     <button type="button" onClick="calculate()">Calculate it!</button><br>
 
 
