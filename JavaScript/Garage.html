@@ -2,38 +2,16 @@
 <html>
 
 <head>
+        <script type="text/javascript" src="garage.js"></script>
     <title>Garage</title>
+
 </head>
 
 <body>
-    <h1>Garage</h1>
-
-    <script>
-        let garage = [];
-        let car = {
-            name: "",
-            regNum: "",
-            ownNum: ""
-        };
-
-        function checkIn() {
-            car.name = document.getElementById("name").value;
-            car.regNum = document.getElementById("rnum").value;
-            car.ownNum = document.getElementById("onum").value;
-            garage.push(car);
-        }
-
-        function checkOut() {
-            let r = document.getElementById("cnum").value;
-            
-        }
-
-        function show() {
-            document.getElementById("mypara").innerHTML = JSON.stringify(garage);
-        }
-    </script>
+    <h1>Garage</h1> 
+    
     <h3>Garage content</h3><button type="button" onClick="show()">Show it!</button><br>
-    <input type=text id="content"><br>
+    <br>
     <p id="mypara"> </p>
     <h3> Check in </h3>
     <label> Name: </label><input type=text id="name"><br>
@@ -52,7 +30,7 @@
     <label> Car name: </label><input type=text id="carBill"><br>
     <label> Car Registration number: </label><input type=text id="carreg"><br>
 
-    <button type="button" onClick="()">Calculate it!</button><br>
+    <button type="button" onClick="calculate()">Calculate it!</button><br>
 
 
 
