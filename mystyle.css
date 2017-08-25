@@ -1,0 +1,39 @@
+
+body {
+  background-color: #ff9933;
+}
+
+.center{
+  margin: auto;
+  width: 50%;
+  border: 3px solid white;
+  padding: 10px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+p.small {
+    font-variant: small-caps;
+}

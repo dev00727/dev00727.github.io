@@ -68,6 +68,7 @@ function choose() {
 //here
 function guess() { //l
     let l = document.getElementById("letter").value;
+    document.getElementById("g").innerHTML+= l+",";
     console.log(l);
     for (let i = 0; i <= chosen.length; i++) {
         if (l === chosen[i]) {
