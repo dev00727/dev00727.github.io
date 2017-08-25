@@ -91,3 +91,10 @@
     document.getElementById("mypara").innerHTML ="Showing Car";
      show(carList);
    }
+   function choose(){
+       let test= document.getElementById("tc").value;
+       let res= test.split(" ");
+       if (res[0]==="create"){
+           
+       }
+   }
