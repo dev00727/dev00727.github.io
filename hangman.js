@@ -6,7 +6,8 @@ let dash = [];
 let notfound = 1;
 let diff;
 let correct = 0;
-
+let wordCount;
+let dashCount;
 function request() {
 
     let requestURL = 'https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt';
@@ -77,6 +78,12 @@ function guess() { //l
         }
 
     }
+    // for(let i=0; i<=dash.length; i++){
+    //     if (dash[i]==="_ "){
+    //         dashCount++;
+    //     }
+    // }
+    // if (dashCount)
 
     //console.log(notfound);
     if (notfound === 1) {
