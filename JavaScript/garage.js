@@ -84,7 +84,11 @@ function toCar() {
 
     checkIn(0);
 }
-
+function showGarage() {
+    document.getElementById("mypara").innerHTML = "Showing Garage";
+    console.log("Came to garage");
+    show(garage);
+}
 function showCar() {
     document.getElementById("mypara").innerHTML = "Showing Car";
     show(carList);
@@ -111,28 +115,46 @@ function createCar( name, num, seat, fault) {
     //     carList.push(car);
     //     alert("checked in car list!");
     // }
-    //carList.push(car);
-    garage.push(car);
+    carList.push(car);
+    
+ 
 
 }
 function choose() {
     let test = document.getElementById("tc").value;
-    let res = test.split(" ");
-
+    //let res = test.split(" ");
+let res = test.trim().split(/\s+/);
     for (let i = 0; i <= res.length; i++) {
-       // console.log(res[i]);
+       //console.log(res[i]);
+       //console.log("here");
 
-        if (res[0] === "create") {
-            createCar(res[2], res[3], res[4], res[5]);
+        if (res[i] === "create") {
+            console.log("creating");
+            
+            createCar(res[i+2], res[i+3], res[i+4], res[i+5]);
         }
         if (res[i] === "output") {
+             console.log("outputing");
             showGarage();
+        }
+        if(res[i]==="in"){
+            console.log("check in");
+            
+            for(let j=0; j<=carList.length; j++){
+                if(res[i+1]===carList[j].regNum){
+                    garage.push(carList[j]);
+                }
+            }
+        }
+        if(res[i]=== "out"){
+            console.log("check out");
+            
+            for(let j=0; j<=carList.length; j++){
+                if(res[i+1]===carList[j].regNum){
+                    garage.splice(carList[j]);
+                }
+            }
         }
     }
    
-}
-function showGarage() {
-    document.getElementById("mypara").innerHTML = "Showing Garage";
-    console.log("Came to garage");
-    show(garage);
 }
