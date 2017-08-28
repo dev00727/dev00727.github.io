@@ -124,13 +124,15 @@ function choose() {
     let test = document.getElementById("tc").value;
     //let res = test.split(" ");
 let res = test.trim().split(/\s+/);
-    for (let i = 0; i <= res.length; i++) {
+     for (let i = 0; i <= res.length; i++) {
        //console.log(res[i]);
        //console.log("here");
 
+
+
         if (res[i] === "create") {
             console.log("creating");
-            
+            console.log(res[i]);
             createCar(res[i+2], res[i+3], res[i+4], res[i+5]);
         }
         if (res[i] === "output") {
