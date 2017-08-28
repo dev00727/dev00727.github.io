@@ -8,6 +8,8 @@ let diff;
 let correct = 0;
 let wordCount;
 let dashCount;
+let dead=0;
+let countDone=1;
 function request() {
 
     let requestURL = 'https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt';
@@ -71,21 +73,18 @@ function guess() { //l
     let l = document.getElementById("letter").value;
     document.getElementById("g").innerHTML+= l+",";
     console.log(l);
+    console.log("chosen length"+chosen.length);
     for (let i = 0; i <= chosen.length; i++) {
         if (l === chosen[i]) {
             dash[i] = l;
             notfound = 0;
+            countDone++;
+            console.log("count done is "+countDone);
+            
         }
 
     }
-    // for(let i=0; i<=dash.length; i++){
-    //     if (dash[i]==="_ "){
-    //         dashCount++;
-    //     }
-    // }
-    // if (dashCount)
 
-    //console.log(notfound);
     if (notfound === 1) {
 
         life--;
@@ -94,12 +93,14 @@ function guess() { //l
     }
     document.getElementById("w").innerHTML = dash;
     notfound = 1;
+    if(countDone===chosen.length){
+        alert("Winner. You guessed: "+chosen);
+        location.reload();
+
+    }
 }
 
-// function btn() {
-//     var x = document.getElementById("myBtn").value;
-//     guess(x);
-// }
+
 
 function easy() {
     diff = "easy";
@@ -225,13 +226,15 @@ function draw() {
 
     }
     if (life === 1) {
-        dead();
+        deadloss();
     }
 
 
 }
 
-function dead() {
+function deadloss() {
+    dead=1;
     alert("Life is cruel. You are dead. " + chosen.toUpperCase() + " killed you.");
     document.getElementById("w").innerHTML = "";
+   location.reload();
 }
